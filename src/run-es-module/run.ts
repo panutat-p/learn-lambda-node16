@@ -21,7 +21,6 @@ const command = new InvokeCommand({
     if (data.LogResult != null) {
       console.log(`\n${decode(data.LogResult)}`);
     }
-    console.log(data.Payload);
     console.log(new TextDecoder('utf-8').decode(data.Payload));
   } catch (e) {
     console.log(e);

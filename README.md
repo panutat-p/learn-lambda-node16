@@ -51,6 +51,10 @@ aws lambda invoke \
     --function-name run-es-module \
     response.json
 cat response.json
+
+aws lambda update-function-configuration \
+    --function-name run-es-module \
+    --description "see cold start--"
 ```
 
 ## Invoke Lambda using SDK
