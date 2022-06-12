@@ -37,34 +37,49 @@ aws iam attach-role-policy \
   --role-name typescript-role \
   --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 
-aws iam list-roles | grep typescript-role
+aws iam list-roles | grep lambda-role
 
 zip function.zip index.mjs
 
-aws typescript create-function \
+aws lambda create-function \
     --function-name run-es-module \
     --runtime nodejs16.x \
     --zip-file fileb://function.zip \
     --handler index.handler \
     --role arn:aws:iam::548250577290:role/typescript-role
 
-aws typescript get-function --function-name  run-es-module
+aws lambda get-function --function-name  run-es-module
 
 zip function.zip index.mjs
 
-aws typescript update-function-code \
+aws lambda update-function-code \
     --function-name  run-es-module \
     --zip-file fileb://function.zip \
 
-aws typescript invoke \
+aws lambda invoke \
     --no-cli-pager \
     --function-name run-es-module \
     response.json
 cat response.json
 
-aws typescript update-function-configuration \
+aws lambda update-function-configuration \
     --function-name run-es-module \
     --description "see cold start--"
+```
+
+```shell
+aws lambda create-function \
+    --function-name hello-world-ts \
+    --runtime "nodejs16.x" \
+    --role arn:aws:iam::548250577290:role/lambda-role \
+    --zip-file "fileb://dist/index.zip" \
+    --handler index.handler
+
+aws lambda invoke \
+    --no-cli-pager \
+    --function-name hello-world-ts \
+    response.json
+cat response.json
 ```
 
 ## Invoke Lambda using SDK
