@@ -19,18 +19,13 @@ https://docs.aws.amazon.com/lambda/latest/dg/nodejs-image.html
 https://docs.aws.amazon.com/lambda/latest/dg/typescript-package.html#aws-cli-ts
 
 ```shell
+npm install -D esbuild
 npm i @aws-sdk/client-s3
 npm i @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
 npm i @aws-sdk/client-lambda
+npm i -D @types/aws-lambda
 npm i base-64
 npm i -D @types/base-64
-```
-
-### Lambda open-source definition
-
-```shell
-npm i -D @types/aws-lambda
-npm install -D esbuild
 ```
 
 ```shell
