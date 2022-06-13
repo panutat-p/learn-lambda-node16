@@ -13,7 +13,8 @@ https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html
 https://docs.aws.amazon.com/lambda/latest/dg/nodejs-image.html
 
 ```shell
-npm install -D esbuild
+npm i -D ts-node 
+npm i -D esbuild
 npm i @aws-sdk/client-s3
 npm i @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb
 npm i @aws-sdk/client-lambda
