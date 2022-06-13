@@ -14,6 +14,16 @@ aws lambda get-function --function-name run-es-module
 ```
 
 ```shell
+aws lambda create-function \
+    --role arn:aws:iam::548250577290:role/lambda-role \
+    --function-name run-es-module \
+    --package-type Image \
+    --code "ImageUri=548250577290.dkr.ecr.ap-southeast-1.amazonaws.com/run-es-module:latest"
+
+aws lambda get-function --function-name run-es-module
+```
+
+```shell
 zip function.zip index.mjs
 
 aws lambda update-function-code \
