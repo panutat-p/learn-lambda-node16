@@ -68,6 +68,8 @@ aws lambda update-function-configuration \
 ```
 
 ```shell
+npm run build
+
 aws lambda create-function \
     --function-name hello-world-ts \
     --runtime "nodejs16.x" \

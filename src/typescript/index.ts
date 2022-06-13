@@ -1,9 +1,6 @@
 import { APIGatewayEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
 
-export const handler = async (
-  event: APIGatewayEvent,
-  context: Context
-): Promise<APIGatewayProxyResult> => {
+export async function handler(event:APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> {
   console.log(`Event: ${JSON.stringify(event, null, 2)}`);
   console.log(`Context: ${JSON.stringify(context, null, 2)}`);
   return {
@@ -12,4 +9,4 @@ export const handler = async (
       message: 'hello world',
     }),
   };
-};
+}
